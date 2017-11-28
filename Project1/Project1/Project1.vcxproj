@@ -111,15 +111,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Actor.cpp" />
+    <ClCompile Include="Director.cpp" />
     <ClCompile Include="Film.cpp" />
     <ClCompile Include="Franchise.cpp" />
     <ClCompile Include="FranchiseRegister.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Person.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Actor.h" />
+    <ClInclude Include="Director.h" />
     <ClInclude Include="Film.h" />
     <ClInclude Include="Franchise.h" />
     <ClInclude Include="FranchiseRegister.h" />
+    <ClInclude Include="Person.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
