@@ -2,7 +2,6 @@
 #define FILM_H
 
 #include"Director.h"
-#include "Actor.h"
 #include <string>
 
 using namespace std;
@@ -12,8 +11,7 @@ class Film
 private:
 	string name;
 	int relaseYear;
-	Director director;
-	Actor leadActor;
+	Director*director;
 	int totalGrowth;
 	int budget;
 	int score;
@@ -32,10 +30,8 @@ public:
 	void setName(const string &name);
 	int getRelaseYear() const;
 	void setRelaseYear(const int &year);
-	Director getDirector() const;
+	Director* getDirectorPtr() const;
 	//void setDirector(); unnecessary?
-	Actor getLeadActor() const;
-	//void setleadActor(); unnecessary??
 	int getTotalGrowth() const;
 	void setTotalGrowth(const int &growth);
 	int getBudget() const;

@@ -1,16 +1,21 @@
 #ifndef DIRECTOR_H
 #define DIRECTOR_H
-#include "Person.h"
+#include <string>
+#include <sstream>
+#include <fstream>
+using namespace std;
 
-class Director : public Person
+class Director 
 {
 private:
-	string guildAssosiation;
+	string FirstName;
+	string LastName;
+	int age;
 	int numberOfDirectorCredits;
 public:
 	//constructors
 	Director();
-	Director(const string &guildAssosiation, const int &numberOfDirectorCredits, const string &fname, const string &lname, const int &age);
+	Director(const int &numberOfDirectorCredits, const string &fname, const string &lname, const int &age);
 	
 	//destructor
 	~Director();
@@ -19,8 +24,14 @@ public:
 	bool operator==(const Director other);
 
 	//get&set function
-	string getGuildAssosiation() const;
-	void setGuildAssosiation(const string guild);
+	void setFirstName(const string &fname);
+	string getFirstName() const;
+
+	void setLastName(const string &lname);
+	string getLastName() const;
+
+	void setAge(const int &age);
+	int getAge() const;
 
 	int getNumberOfDirectorCredits() const;
 	void setNumberOfDirectorCredits(const int number);

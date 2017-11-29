@@ -1,39 +1,53 @@
 #include "Director.h"
 
 //constructors
-Director::Director() : Person(){}
+Director::Director(){}
 
-Director::Director(const string & guildAssosiation, const int & numberOfDirectorCredits, const string & fname, const string & lname, const int & age) :Person(fname,lname,age){
-	this->guildAssosiation = guildAssosiation;
+Director::Director( const int & numberOfDirectorCredits, const string & fname, const string & lname, const int & age) {
+	this->FirstName = fname;
+	this->LastName = lname;
+	this->age = age;
 	this->numberOfDirectorCredits = numberOfDirectorCredits;
 }
 
 
 //destructor
 Director::~Director() {
-	this->guildAssosiation = "";
 	this->numberOfDirectorCredits = 0;
+	this->FirstName = "";
+	this->LastName = "";
+	this->age = 0;
 }
 
 //operator
 bool Director::operator==(const Director other) {
-	bool test = false;
-	if (this->getFirstName() == other.getFirstName() && this->getLastName() == other.getLastName()) {
-		if (this->guildAssosiation == other.guildAssosiation) {
-			test = true;
-		}
-	}
-	return test;
+	return (this->getFirstName() == other.getFirstName() && this->getLastName() == other.getLastName());
 }
 
 
 //get&set function
-string Director::getGuildAssosiation() const {
-	return this->guildAssosiation;
+void Director::setFirstName(const string &fname) {
+	this->FirstName = fname;
 }
 
-void Director::setGuildAssosiation(string guild) {
-	this->guildAssosiation = guild;
+string Director::getFirstName() const {
+	return this->FirstName;
+}
+
+void Director::setLastName(const string &lname) {
+	this->LastName = lname;
+}
+
+string Director::getLastName() const {
+	return this->LastName;
+}
+
+void Director::setAge(const int &age) {
+	this->age = age;
+}
+
+int Director::getAge() const {
+	return this->age;
 }
 
 int Director::getNumberOfDirectorCredits() const {

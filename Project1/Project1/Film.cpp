@@ -29,13 +29,10 @@ void Film::setRelaseYear(const int & year) {
 	this->relaseYear = year;
 }
 
-Director Film::getDirector() const {
+Director* Film::getDirectorPtr() const {
 	return this->director;
 }
 
-Actor Film::getLeadActor() const {
-	return this->leadActor;
-}
 
 int Film::getTotalGrowth() const {
 	return this->totalGrowth;
