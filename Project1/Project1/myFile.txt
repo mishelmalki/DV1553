@@ -1,0 +1,9 @@
+4
+Quentin	Tarantino
+54	20
+Martin	Scorsese
+75	61
+Edgar	Wright 
+43	21
+Christopher	Nolan
+47	14

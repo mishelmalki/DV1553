@@ -13,14 +13,13 @@ Director::Director( const int & numberOfDirectorCredits, const string & fname, c
 
 //destructor
 Director::~Director() {
-	this->numberOfDirectorCredits = 0;
-	this->FirstName = "";
-	this->LastName = "";
-	this->age = 0;
+
 }
 
 //operator
-bool Director::operator==(const Director other) {
+
+bool Director::operator==(const Director & other)
+{
 	return (this->getFirstName() == other.getFirstName() && this->getLastName() == other.getLastName());
 }
 

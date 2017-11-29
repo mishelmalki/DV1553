@@ -33,7 +33,7 @@ public:
 	//remove from array
 	bool removeDirector(const string fname,const string lname);
 	//findInArrey
-	int findDirector(Director tempDirector) const;
+	int findDirector(const string fname, const string lname) const;
 	
 	//write&readToFile
 	bool write2File(string name) const;

@@ -125,6 +125,9 @@
     <ClInclude Include="Franchise.h" />
     <ClInclude Include="FranchiseRegister.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="myFile.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

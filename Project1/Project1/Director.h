@@ -21,7 +21,8 @@ public:
 	~Director();
 
 	//operator
-	bool operator==(const Director other);
+	bool operator==(const Director &other);
+
 
 	//get&set function
 	void setFirstName(const string &fname);

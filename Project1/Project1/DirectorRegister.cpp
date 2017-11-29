@@ -59,15 +59,17 @@ void DirectorRegister::operator=(const DirectorRegister & other) {
 
 bool DirectorRegister::addDirectorToArrey(const int & numberOfDirectorCredits, const string & fname, const string & lname, const int & age) {
 	bool check = false;
-	Director *tempDirector = new Director(numberOfDirectorCredits, fname, lname, age);
 
-	if (findDirector(*tempDirector) == -1) {
+	if (findDirector(fname, lname) == -1) {
+		Director *tempDirector = new Director(numberOfDirectorCredits, fname, lname, age);
+		if (this->numberOf == this->myLength) {
+			expand();
+		}
 		directorArrey[this->numberOf] = tempDirector;
 		this->numberOf++;
 		check = true;
+		tempDirector = nullptr;
 	}
-	delete tempDirector;
-
 	return check;
 }
 
@@ -90,10 +92,10 @@ bool DirectorRegister::removeDirector(const string fname, const string lname) {
 	return check;
 }
 
-int DirectorRegister::findDirector(Director tempDirector) const {
+int DirectorRegister::findDirector(const string fname, const string lname) const {
 	int check = -1;
 	for (int i = 0; i < this->numberOf; i++) {
-		if (this->directorArrey[i] == &tempDirector) {
+		if (this->directorArrey[i]->getFirstName()==fname && this->directorArrey[i]->getLastName()==lname) {
 			check = i;
 			i = numberOf;
 		}
@@ -108,10 +110,8 @@ bool DirectorRegister::write2File(string name) const {
 	if (outfile.is_open() == true) {
 		outfile << this->numberOf << endl;
 		for (int i = 0; i < this->numberOf; i++) {
-			outfile << this->directorArrey[i]->getFirstName() << endl;
-			outfile << this->directorArrey[i]->getLastName() << endl;
-			outfile << this->directorArrey[i]->getAge() << endl;
-			outfile << this->directorArrey[i]->getNumberOfDirectorCredits() << endl;
+			outfile << this->directorArrey[i]->getFirstName() << "\t"<< this->directorArrey[i]->getLastName() << endl;
+			outfile << this->directorArrey[i]->getAge() << "\t" << this->directorArrey[i]->getNumberOfDirectorCredits() << endl;
 		}
 		check = true;
 		outfile.close();
@@ -133,10 +133,10 @@ bool DirectorRegister::readFromFile(const string name) {
 		}
 		for (int i = 0; i < number; i++) {
 			inFile.ignore();
-			getline(inFile, FirstName);
+			
+			getline(inFile, FirstName, '\t');
 			getline(inFile, LastName);
-			inFile >> age;
-			inFile >> numberOfDirectorCredits;
+			inFile >> age >> numberOfDirectorCredits;
 			this->addDirectorToArrey(numberOfDirectorCredits, FirstName, LastName, age);
 		}
 		this->numberOf = number;
