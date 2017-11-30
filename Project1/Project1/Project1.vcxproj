@@ -114,19 +114,18 @@
     <ClCompile Include="Director.cpp" />
     <ClCompile Include="DirectorRegister.cpp" />
     <ClCompile Include="Film.cpp" />
-    <ClCompile Include="Franchise.cpp" />
-    <ClCompile Include="FranchiseRegister.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Studio.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Director.h" />
     <ClInclude Include="DirectorRegister.h" />
     <ClInclude Include="Film.h" />
-    <ClInclude Include="Franchise.h" />
-    <ClInclude Include="FranchiseRegister.h" />
+    <ClInclude Include="Studio.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="myFile.txt" />
+    <Text Include="myDirectors.txt" />
+    <Text Include="myStudios&amp;Films.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

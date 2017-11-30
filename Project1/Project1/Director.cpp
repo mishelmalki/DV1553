@@ -8,6 +8,11 @@ Director::Director( const int & numberOfDirectorCredits, const string & fname, c
 	this->LastName = lname;
 	this->age = age;
 	this->numberOfDirectorCredits = numberOfDirectorCredits;
+	
+	srand(time(NULL));
+	
+	this->ID = rand() % 2000 + 1;
+	
 }
 
 
@@ -55,5 +60,9 @@ int Director::getNumberOfDirectorCredits() const {
 
 void Director::setNumberOfDirectorCredits(const int number) {
 	this->numberOfDirectorCredits = number;
+}
+
+int Director::getID() const {
+	return this->ID;
 }
 

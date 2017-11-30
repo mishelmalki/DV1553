@@ -21,27 +21,18 @@
     <ClCompile Include="Film.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Franchise.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FranchiseRegister.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Director.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DirectorRegister.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Studio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Film.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Franchise.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FranchiseRegister.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Director.h">
@@ -50,9 +41,15 @@
     <ClInclude Include="DirectorRegister.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Studio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="myFile.txt">
+    <Text Include="myStudios&amp;Films.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="myDirectors.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

@@ -3,6 +3,9 @@
 #include <string>
 #include <sstream>
 #include <fstream>
+#include <stdlib.h>
+#include <time.h>
+
 using namespace std;
 
 class Director 
@@ -12,6 +15,7 @@ private:
 	string LastName;
 	int age;
 	int numberOfDirectorCredits;
+	int ID;
 public:
 	//constructors
 	Director();
@@ -36,5 +40,7 @@ public:
 
 	int getNumberOfDirectorCredits() const;
 	void setNumberOfDirectorCredits(const int number);
+
+	int getID() const;
 };
 #endif
