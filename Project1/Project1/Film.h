@@ -24,6 +24,7 @@ public:
 	~Film();
 
 	//operator
+	bool operator==(const Film &other);
 
 	//get&set function
 	string getName() const;

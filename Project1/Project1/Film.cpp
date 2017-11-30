@@ -4,6 +4,7 @@
 Film::Film() {}
 
 Film::Film(const string & name, const int & relaseYear, const int & directorID, const int & totalGrowth, const int & budget, const int & score) {
+	this->name = name;
 	this->relaseYear = relaseYear;
 	this->directorID = directorID;
 	this->totalGrowth = totalGrowth;
@@ -13,6 +14,10 @@ Film::Film(const string & name, const int & relaseYear, const int & directorID, 
 
 
 Film::~Film() {}
+
+bool Film::operator==(const Film & other) {
+	return (this->name==other.getName() && this->relaseYear == other.getRelaseYear());
+}
 
 //get&set function
 string Film::getName() const {

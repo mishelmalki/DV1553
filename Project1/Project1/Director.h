@@ -4,7 +4,8 @@
 #include <sstream>
 #include <fstream>
 #include <stdlib.h>
-#include <time.h>
+
+
 
 using namespace std;
 
@@ -20,7 +21,8 @@ public:
 	//constructors
 	Director();
 	Director(const int &numberOfDirectorCredits, const string &fname, const string &lname, const int &age);
-	
+	Director(const int myId, const int &numberOfDirectorCredits, const string &fname, const string &lname, const int &age);
+
 	//destructor
 	~Director();
 
@@ -39,7 +41,7 @@ public:
 	int getAge() const;
 
 	int getNumberOfDirectorCredits() const;
-	void setNumberOfDirectorCredits(const int number);
+	void setNumberOfDirectorCredits(const int &number);
 
 	int getID() const;
 };

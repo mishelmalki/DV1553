@@ -29,7 +29,8 @@ public:
 
 	//addToArrey
 	bool addDirectorToArrey(const int &numberOfDirectorCredits, const string &fname, const string &lname, const int &age);
-	
+	bool addDirectorToArreyWithID(const int MyID, const int &numberOfDirectorCredits, const string &fname, const string &lname, const int &age);
+
 	//remove from array
 	bool removeDirector(const string fname,const string lname);
 	//findInArrey

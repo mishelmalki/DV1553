@@ -11,7 +11,6 @@ DirectorRegister::DirectorRegister(const DirectorRegister & other) {
 	this->numberOf = other.numberOf;
 	this->myLength = other.myLength;
 	this->directorArrey = new Director*[myLength];
-
 	for (int i = 0; i < numberOf; i++) {
 		directorArrey[i] = new Director(*other.directorArrey[i]);
 	}
@@ -73,6 +72,22 @@ bool DirectorRegister::addDirectorToArrey(const int & numberOfDirectorCredits, c
 	return check;
 }
 
+bool DirectorRegister::addDirectorToArreyWithID(const int MyID, const int & numberOfDirectorCredits, const string & fname, const string & lname, const int & age) {
+	bool check = false;
+
+	if (findDirector(fname, lname) == -1) {
+		Director *tempDirector = new Director(MyID,numberOfDirectorCredits, fname, lname, age);
+		if (this->numberOf == this->myLength) {
+			expand();
+		}
+		directorArrey[this->numberOf] = tempDirector;
+		this->numberOf++;
+		check = true;
+		tempDirector = nullptr;
+	}
+	return check;
+}
+
 bool DirectorRegister::removeDirector(const string fname, const string lname) {
 	bool check = false;
 	int pos = -1;
@@ -111,7 +126,7 @@ bool DirectorRegister::write2File(string name) const {
 		outfile << this->numberOf << endl;
 		for (int i = 0; i < this->numberOf; i++) {
 			outfile << this->directorArrey[i]->getFirstName() << "\t"<< this->directorArrey[i]->getLastName() << endl;
-			outfile << this->directorArrey[i]->getAge() << "\t" << this->directorArrey[i]->getNumberOfDirectorCredits() << endl;
+			outfile << this->directorArrey[i]->getAge() << "\t" << this->directorArrey[i]->getNumberOfDirectorCredits() << "\t" << this->directorArrey[i]->getID() << endl;
 		}
 		check = true;
 		outfile.close();
@@ -124,7 +139,7 @@ bool DirectorRegister::readFromFile(const string name) {
 	ifstream inFile;
 	inFile.open(name + ".txt");
 	if (inFile.is_open() == true) {
-		int age, numberOfDirectorCredits, number;
+		int age, numberOfDirectorCredits, ID, number;
 		string FirstName, LastName;
 
 		inFile >> number;
@@ -136,8 +151,8 @@ bool DirectorRegister::readFromFile(const string name) {
 			
 			getline(inFile, FirstName, '\t');
 			getline(inFile, LastName);
-			inFile >> age >> numberOfDirectorCredits;
-			this->addDirectorToArrey(numberOfDirectorCredits, FirstName, LastName, age);
+			inFile >> age >> numberOfDirectorCredits >> ID;
+			this->addDirectorToArreyWithID(ID,numberOfDirectorCredits, FirstName, LastName, age);
 		}
 		this->numberOf = number;
 		check = true;
@@ -145,7 +160,3 @@ bool DirectorRegister::readFromFile(const string name) {
 	}
 	return check;
 }
-
-
-
-

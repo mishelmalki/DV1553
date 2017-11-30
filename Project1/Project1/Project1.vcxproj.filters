@@ -30,6 +30,9 @@
     <ClCompile Include="Studio.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="StudioRegister.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Film.h">
@@ -42,6 +45,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Studio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StudioRegister.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
