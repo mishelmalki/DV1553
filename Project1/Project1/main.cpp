@@ -27,7 +27,6 @@ int main(void) {
 
 	
 	
-	
 	//reg.write2File("myDirectors");
 	//getchar();
 };

@@ -167,7 +167,7 @@ bool Studio::readFromFile(ifstream & inFile) {
 	if (inFile.is_open() == true) {
 		int releaseYear, directorID, totalGrowth, budget, score, numberOfFilmsInFile;
 		string name;
-		// very broken pointer, this -> corrupted, constructor dosent seem to be called previosly :S
+		// very broken pointer, this -> corrupted
 		inFile >> numberOfFilmsInFile;
 		
 		while (this->myLength <= numberOfFilmsInFile) {

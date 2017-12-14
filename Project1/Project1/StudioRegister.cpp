@@ -126,6 +126,7 @@ bool StudioRegister::readFromFile(const string name) {
 			expand();
 		}
 		for (int i = 0; i < fileNumber; i++) {
+			this->studioArray[i] = new Studio();
 			this->studioArray[i]->readFromFile(inFile);
 		}
 		this->numberOf = fileNumber;
